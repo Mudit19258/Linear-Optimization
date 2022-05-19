@@ -1,0 +1,39 @@
+reset;
+# initializing the variables
+var x1 >= 0;
+var x2 >= 0;
+var x3 >= 0;
+var x4 >= 0;
+var x5 >= 0;
+var x6 >= 0;
+var x7 >= 0;
+var x8 >= 0;
+var x9 >= 0;
+var x10 >= 0;
+
+# calculating max-flow
+maximize z: x1 + x2;
+
+# flow constraints
+s.t. c1: x2 + x4 - x3 - x7 = 0;
+s.t. c2: x1 + x3 + x6 - x4 - x5 = 0;
+s.t. c3: x7 + x8 - x6 - x10 = 0;
+s.t. c4: x5 - x8 - x9 = 0;
+# arc constraints
+s.t. c5: x1 <= 13;
+s.t. c6: x2 <= 16;
+s.t. c7: x3 <= 10;
+s.t. c8: x4 <= 4;
+s.t. c9: x5 <= 14;
+s.t. c10: x6 <= 9;
+s.t. c11: x7 <= 12;
+s.t. c12: x8 <= 7;
+s.t. c13: x9 <= 7;
+s.t. c14: x10 <= 20;
+
+option solver cplex;
+
+solve;
+
+# displaying the optimal solution and optimal value
+display x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, z;

@@ -1,0 +1,87 @@
+reset;
+
+# initializing variables
+var y1 >= 0;
+var y2 >= 0;
+var y3 >= 0;
+var y4 >= 0;
+var y5 >= 0;
+var y6 >= 0;
+var y7 >= 0;
+var y8 >= 0;
+var y9 >= 0;
+var y10 >= 0;
+var y11 >= 0;
+var y12 >= 0;
+var y13 >= 0;
+var y14 >= 0;
+var y15 >= 0;
+var y16 >= 0;
+var y17 >= 0;
+var y18 >= 0;
+var y19 >= 0;
+var y20 >= 0;
+var y21 >= 0;
+var y22 >= 0;
+var y23 >= 0;
+var y24 >= 0;
+var y25 >= 0;
+var y26 >= 0;
+var y27 >= 0;
+var y28 >= 0;
+var y29 >= 0;
+var y30 >= 0;
+var y31 >= 0;
+# unrestricted
+var y32;
+var y33;
+var y34;
+var y35;
+var y36;
+var y37;
+var y38;
+var y39;
+var y40;
+var y41;
+
+# objective function: min-cut
+minimize z: 11*y1 + 15*y2 + 10*y3 + 18*y4 + 4*y5 + 3*y6 + 8*y7 + 5*y8 + 6*y9 + 3*y10 + 11*y11 + 4*y12 + 17*y13 + 6*y14 + 3*y15 + 16*y16 + 13*y17 + 12*y18 + 4*y19 + 21*y20 + 4*y21 + 9*y22 + 4*y23 + 3*y24 + 4*y25 + 5*y26 + 4*y27 + 7*y28 + 9*y29 + 2*y30 + 15*y31;  
+
+# flow constraints
+s.t. c1: y1 + y32 >= 1;
+s.t. c2: y2 + y33 >= 1;
+s.t. c3: y3 + y34 >= 1;
+s.t. c4: y4 - y32 + y36 >= 0;
+s.t. c5: y5 - y32 + y37 >= 0;
+s.t. c6: y6 + y32 - y33 >= 0;
+s.t. c7: y7 >= 0;
+s.t. c8: y8 - y33 + y34 >= 0;
+s.t. c9: y9 - y34 + y35 >= 0;
+s.t. c10: y10 - y34 + y38 >= 0;
+s.t. c11: y11 - y34 + y39 >= 0;
+s.t. c12: y12 + y34 - y35 >= 0;
+s.t. c13: y13 - y35 + y38 >= 0;
+s.t. c14: y14 - y35 >= 0;
+s.t. c15: y15 + y35 - y36 >= 0;
+s.t. c16: y16 >= 0;
+s.t. c17: y17 - y36 + y40 >= 0;
+s.t. c18: y18 + y32 - y37 >= 0;
+s.t. c19: y19 + y35 - y37 >= 0;
+s.t. c20: y20 - y37 >= 0;
+s.t. c21: y21 - y38 + y39 >= 0;
+s.t. c22: y22 - y38 + y40 >= 0;
+s.t. c23: y23 - y38 + y39 + y41 >= 0;
+s.t. c24: y24 - y38 >= 0;
+s.t. c25: y25 + y38 - y39 >= 0;
+s.t. c26: y26 - y39 + y41 >= 0;
+s.t. c27: y27 - y39 >= 0;
+s.t. c28: y28 - y40 >= 0;
+s.t. c29: y29 - y40 >= 0;
+s.t. c30: y30 + y39 - y41 >= 0;
+s.t. c31: y31 - y41 >= 0;
+
+option solver cplex;
+
+solve;
+# displaying optimal solution and value
+display y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15, y16, y17, y18, y19, y20, y21, y22, y23, y24, y25, y26, y27, y28, y29, y30, y31, y32, y33, y34, y35, y36, y37, y38, y39, y40, y41, z;

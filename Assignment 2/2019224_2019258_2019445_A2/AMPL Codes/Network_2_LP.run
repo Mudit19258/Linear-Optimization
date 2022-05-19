@@ -1,0 +1,87 @@
+reset;
+
+# initializing variables
+var x1 >= 0;
+var x2 >= 0;
+var x3 >= 0;
+var x4 >= 0;
+var x5 >= 0;
+var x6 >= 0;
+var x7 >= 0;
+var x8 >= 0;
+var x9 >= 0;
+var x10 >= 0;
+var x11 >= 0;
+var x12 >= 0;
+var x13 >= 0;
+var x14 >= 0;
+var x15 >= 0;
+var x16 >= 0;
+var x17 >= 0;
+var x18 >= 0;
+var x19 >= 0;
+var x20 >= 0;
+var x21 >= 0;
+var x22 >= 0;
+var x23 >= 0;
+var x24 >= 0;
+var x25 >= 0;
+var x26 >= 0;
+var x27 >= 0;
+var x28 >= 0;
+var x29 >= 0;
+var x30 >= 0;
+var x31 >= 0;
+
+# objective function: calculating max-flow
+maximize z: x1 + x2 + x3;
+# flow constraints
+s.t. c1: x1 + x6 + x18 - x4 - x5 = 0;
+s.t. c2: x2 - x6 - x8 = 0;
+s.t. c3: x3 + x8 + x12 - x9 - x10 - x11 = 0;
+s.t. c4: x9 + x15 + x19 - x12 - x13 - x14 = 0;
+s.t. c5: x4 - x15 - x17 = 0;
+s.t. c6: x5 - x18 - x19 - x20 = 0;
+s.t. c7: x10 + x13 + x25 - x21 - x22 - x23 - x24 = 0;
+s.t. c8: x11 + x21 + x23 + x30 - x25 - x26 - x27 = 0;
+s.t. c9: x17 + x22 - x28 - x29 = 0;
+s.t. c10: x23 + x26 + x28 - x30 - x31 = 0;
+# arc constraints
+s.t. c11: x1 <= 11;
+s.t. c12: x2 <= 15;
+s.t. c13: x3 <= 10;
+s.t. c14: x4 <= 18;
+s.t. c15: x5 <= 4;
+s.t. c16: x6 <= 3;
+s.t. c17: x7 <= 8;
+s.t. c18: x8 <= 5;
+s.t. c19: x9 <= 6;
+s.t. c20: x10 <= 3;
+s.t. c21: x11 <= 11;
+s.t. c22: x12 <= 4;
+s.t. c23: x13 <= 17;
+s.t. c24: x14 <= 6;
+s.t. c25: x15 <= 3;
+s.t. c26: x16 <= 16;
+s.t. c27: x17 <= 13;
+s.t. c28: x18 <= 12;
+s.t. c29: x19 <= 4;
+s.t. c30: x20 <= 21;
+s.t. c31: x21 <= 4;
+s.t. c32: x22 <= 9;
+s.t. c33: x23 <= 4;
+s.t. c34: x24 <= 3;
+s.t. c35: x25 <= 4;
+s.t. c36: x26 <= 5;
+s.t. c37: x27 <= 4;
+s.t. c38: x28 <= 7;
+s.t. c39: x29 <= 9;
+s.t. c40: x30 <= 2;
+s.t. c41: x31 <= 15;
+
+option solver cplex;
+
+solve;
+
+# displaying optimal solution and value
+display x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15, x16, x17, x18, x19, x20, x21, x22, x23, x24, x25, x26, x27, x28, x29, x30, x31, z;
